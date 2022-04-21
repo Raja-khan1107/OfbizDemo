@@ -27,6 +27,7 @@ under the License.
         <param-value>ofbizDemoSite</param-value>
         <description>A unique ID used to look up the WebSite entity. Only for component using a WebSite entity, like ecommerce</description>
     </context-param-->
+
     <context-param>
         <description>A unique name used to identify/recognize the local dispatcher for the Service Engine</description>
         <param-name>localDispatcherName</param-name><param-value>ofbizDemo</param-value>
@@ -65,7 +66,7 @@ under the License.
         <display-name>SameSiteFilter</display-name>
         <filter-name>SameSiteFilter</filter-name>
         <filter-class>org.apache.ofbiz.webapp.control.SameSiteFilter</filter-class>
-    </filter>    
+    </filter>
     <filter-mapping><filter-name>ControlFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
     <filter-mapping><filter-name>ContextFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
     <filter-mapping><filter-name>SameSiteFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
@@ -89,4 +90,10 @@ under the License.
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
     </welcome-file-list>
+
+    <init-param>
+        <param-name>allowedPaths</param-name>
+        <param-value>/error:/control:/select:/index.html:/index.jsp:/default.html:/default.jsp:/images:/includes/maincss.css:/css:/js</param-value>
+    </init-param>
+
 </web-app>
